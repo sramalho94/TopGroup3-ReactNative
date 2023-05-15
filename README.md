@@ -6,9 +6,9 @@
 
 ## **_Description_**
 
-### A Template You Can Use to build out a Simple React-Native project
+#### A Template You Can Use to build out a Simple React-Native project
 
-### This Project incorporates Tailwindcss, TypeScript, and React Navigation
+#### This Project incorporates Tailwindcss, TypeScript, and React Navigation
 
 ---
 
