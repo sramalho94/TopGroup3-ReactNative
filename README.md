@@ -25,7 +25,7 @@
 
   - You most pass 3 `props` to atleast one child `component`. Create a `component` directory and build out your `component` there. Render it in one of your `screens`.
   - Your project must use at least 2 `screens`, you may modify the screens in the code base or create your own.There must be a way to `navigate` between the screens.
-  - Style your project using nativewind utility classes, try to add in a dark mode feature using `useState` and incorporating a turnary into nativewind `className`s
+  - Style your project using nativewind utility classes, try to add in a dark mode feature using `useState` and incorporating a ternary into nativewind `className`s
   - Feel free to build out your app from scratch without using this codebase.
 
 ---
