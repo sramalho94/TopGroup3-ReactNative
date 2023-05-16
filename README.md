@@ -30,6 +30,30 @@
 
 ---
 
+## Getting Started
+
+---
+
+- `Fork` and `Clone` the repository
+- `cd` into the project directory and run `npx pod-install ios`
+- run `yarn ios` to open Metro
+- in your Metro terminal press `a` to start an android enviornment
+- happy hacking! ☺️
+
+---
+
+## Submitting
+
+---
+
+You can submit two ways, either:
+
+- push your local changes to github and open a pull request. If you're using your own repo, send me a link to your repo
+
+or
+
+- do a very brief presentation during our meeting on Friday hehe 😝
+
 ## Resources
 
 ---
