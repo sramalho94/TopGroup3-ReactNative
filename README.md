@@ -50,6 +50,8 @@ or
 
 - do a very brief presentation during our meeting on Friday hehe 😝
 
+---
+
 ## Resources
 
 ---
