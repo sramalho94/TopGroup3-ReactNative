@@ -56,6 +56,8 @@ or
 
 ---
 
+### [SettingUptheDevEnv](https://reactnative.dev/docs/environment-setup)
+
 ### [React-NativeDocs](https://reactnative.dev/docs/environment-setup)
 
 ### [NativewindDocs](https://www.nativewind.dev/quick-starts/react-native-cli)
