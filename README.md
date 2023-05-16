@@ -12,10 +12,6 @@
 
 ---
 
-## **_Description_**
-
----
-
 ## Assignment
 
 ---
