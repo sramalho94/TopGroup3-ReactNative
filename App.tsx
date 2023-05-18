@@ -6,7 +6,7 @@ import Screen2 from './screens/Screen2';
 
 export type RootStackParamList = {
   Home: undefined;
-  Screen2: undefined;
+  Screen2: {name: string; dark: boolean; opacity: number};
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
