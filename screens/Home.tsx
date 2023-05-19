@@ -10,16 +10,16 @@ export type NavigationProp = NativeStackNavigationProp<
 >;
 
 const themes = [
-  {name: 'blue-600', opacity: 100, dark: true},
-  {name: 'purple-600', opacity: 75, dark: true},
-  {name: 'red-600', opacity: 50, dark: false},
+  {name: 'bblue', opacity: 100, dark: true},
+  {name: 'ppurple', opacity: 75, dark: true},
+  {name: 'rred', opacity: 50, dark: false},
   {name: 'customcolor', opacity: 40, dark: false},
 ];
 
 const Home = () => {
   const navigation = useNavigation<NavigationProp>();
   return (
-    <SafeAreaView className="justify-center md:flex-col align-middle min-h-screen bg-yellow-400/40">
+    <SafeAreaView className="justify-center md:flex-col align-middle min-h-screen min-w-screen bg-yellow-400/40">
       <View className="justify-center align-middle">
         <View className="flex-row justify-center">
           <Text className="font-bold text-xl text-customcolor">
@@ -31,10 +31,10 @@ const Home = () => {
             Select A Color Theme to Move on to the page
           </Text>
         </View>
-        <View className="flex-row">
+        <View className="flex-row space-x-1 max-w-screen mx-1">
           {themes.map(theme => (
             <TouchableOpacity
-              className={`p-2 border border-black w-1/4 bg-${theme.name}`}
+              className={`p-2 border border-black w-1/4 bg-${theme.name}-500`}
               key={theme.name}
               onPress={() =>
                 navigation.navigate('Screen2', {

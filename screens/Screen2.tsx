@@ -4,7 +4,8 @@ import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../App';
 import {useNavigation} from '@react-navigation/native';
-import {NavigationProp} from '@react-navigation/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+
 type Screen2NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Screen2'
@@ -18,21 +19,23 @@ type Props = {
 };
 
 const Screen2 = ({route}: Props) => {
-  const navigation = useNavigation<NavigationProp>();
+  const navigation = useNavigation<Screen2NavigationProp>();
   const {name, dark, opacity} = route.params;
   return (
-    <View
-      className={`min-h-screen bg-${name} justify-center align-middle mx-auto `}>
-      <Text className={`text-${name}`}>Screen2</Text>
-      <Text>Name: {name}</Text>
-      <Text>Dark: {dark ? 'Yes' : 'No'}</Text>
-      <Text>Opacity: {opacity}</Text>
+    <SafeAreaView
+      className={`min-h-screen bg-customcolor-500/40 justify-center align-middle mx-auto min-w-screen ${
+        dark ? 'dark' : ''
+      } dark:bg-gray-500`}>
+      <Text className={`text-${name}-500`}>Screen2</Text>
+      <Text className={`text-${name}-500`}>Name: {name}</Text>
+      <Text className="text-bblue-500">Dark: {dark ? 'Yes' : 'No'}</Text>
+      <Text className="text-rred-500">Opacity: {opacity}</Text>
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <View className="flex-row justify-center">
+        <View className="flex-row justify-center text-purple-50">
           <Text>Go back</Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
