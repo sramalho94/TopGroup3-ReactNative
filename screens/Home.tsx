@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import React from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
@@ -16,14 +16,10 @@ export type NavigationProp = NativeStackNavigationProp<
 
 const Home = (props: Props) => {
   const navigation = useNavigation<NavigationProp>();
-  // const [theme, setTheme] = React.useState("")
   const { colorScheme, setColorScheme } = useColorScheme()
 
-  // const toggleTheme = () => {
-  //   if (theme === 'light') {
-  //     setTheme('dark')
-  //   }
-  // }
+  const isDarkMode = colorScheme === 'dark'
+
 
   return (
     <SafeAreaView className="flex flex-row justify-center md:flex-col ">
@@ -44,12 +40,30 @@ const Home = (props: Props) => {
             vertical
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setColorScheme(colorScheme === 'light' ? "dark" : "light")}>
-          <Text>{`You are in ${colorScheme} mode.`}</Text>
+        <TouchableOpacity style={colorScheme === 'dark' ? styles.darkMode : styles.lightMode} onPress={() => setColorScheme(colorScheme === 'dark' ? "light" : "dark")}>
+          <Text style={isDarkMode ? styles.darkModeText : styles.lightModeText}>{`You are in ${colorScheme} mode.`}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  darkMode: {
+    backgroundColor: 'black',
+    font: 'white',
+    flex: 1
+  },
+  darkModeText: {
+    color: "white"
+  },
+  lightMode: {
+    backgroundColor: 'green',
+    color: 'black',
+    flex: 1
+  },
+  lightModeText: {
+    color: "black"
+  }
+})
 
 export default Home;
