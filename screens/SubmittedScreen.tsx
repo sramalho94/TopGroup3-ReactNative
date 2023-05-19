@@ -15,7 +15,7 @@ export type NavigationProp = NativeStackNavigationProp<
 const SubmittedScreen = (props: Props) => {
   const navigation = useNavigation<NavigationProp>();
   return (
-    <SafeAreaView>
+    <SafeAreaView className='m min-h-screen min-w-full bg-green-400'>
       <ScrollView>
         <Text
           className='color justify-center bg-green-400 py-5 px-5'
