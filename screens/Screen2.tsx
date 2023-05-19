@@ -23,18 +23,25 @@ const Screen2 = ({route}: Props) => {
   const {name, dark, opacity} = route.params;
   return (
     <SafeAreaView
-      className={`min-h-screen bg-customcolor-500/40 justify-center align-middle mx-auto min-w-screen ${
+      className={`min-h-screen min-w-full bg-customcolor-500/40 justify-center align-middle mx-auto text-center  ${
         dark ? 'dark' : ''
-      } dark:bg-gray-500`}>
-      <Text className={`text-${name}-500`}>Screen2</Text>
-      <Text className={`text-${name}-500`}>Name: {name}</Text>
-      <Text className="text-bblue-500">Dark: {dark ? 'Yes' : 'No'}</Text>
-      <Text className="text-rred-500">Opacity: {opacity}</Text>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <View className="flex-row justify-center text-purple-50">
-          <Text>Go back</Text>
+      } dark:bg-black`}>
+      <View className="flex-row justify-center">
+        <View>
+          <Text className={`text-${name}-500 font-bold text-xl`}>
+            {' '}
+            Welcome To Screen2
+          </Text>
+          <Text className={`text-${name}`}>Name: {name}</Text>
+          <Text className="text-bblue-500">Dark: {dark ? 'Yes' : 'No'}</Text>
+          <Text className="text-rred-500">Opacity: {opacity}</Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <View className="flex-row justify-center text-purple-50 mt-3 p-3 rounded-lg border border-ppurple-500 mx-auto">
+              <Text className="text-ppurple">Go back</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

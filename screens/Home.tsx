@@ -34,7 +34,7 @@ const Home = () => {
         <View className="flex-row space-x-1 max-w-screen mx-1">
           {themes.map(theme => (
             <TouchableOpacity
-              className={`p-2 border border-black w-1/4 bg-${theme.name}-500`}
+              className={'p-2 border border-black w-1/4 bg-customcolor-500/40'}
               key={theme.name}
               onPress={() =>
                 navigation.navigate('Screen2', {
@@ -43,7 +43,7 @@ const Home = () => {
                   opacity: theme.opacity,
                 })
               }>
-              <Text>{theme.name}</Text>
+              <Text className={`text-${theme.name}-500`}>{theme.name}</Text>
               <Text>Opacity: {theme.opacity}</Text>
               {theme.dark ? <Text>Dark Mode</Text> : null}
             </TouchableOpacity>
