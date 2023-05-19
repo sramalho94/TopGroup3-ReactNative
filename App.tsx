@@ -1,29 +1,30 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Home from './screens/Home';
-import Screen2 from './screens/Screen2';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import AnimalsScreen from './screens/AnimalsScreen';
+import Navigator from './components/Navigator';
 
-export type RootStackParamList = {
-  Home: undefined;
-  Screen2: undefined;
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{headerShown: false}}
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Screen2"
-          component={Screen2}
-          options={{headerShown: false}}
+          name="AnimalsScreen"
+          component={AnimalsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Navigator"
+          component={Navigator}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
