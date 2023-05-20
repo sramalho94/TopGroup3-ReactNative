@@ -28,7 +28,12 @@ const Screen2 = ({route}: Props) => {
       } dark:bg-black`}>
       <View className="flex-row justify-center">
         <View>
-          <Text className={`text-${name}-500 font-bold text-xl`}>
+          <Text
+            className={
+              name === 'customcolor'
+                ? `text-${name} font-bold text-xl`
+                : `text-${name}-500 font-bold text-xl`
+            }>
             {' '}
             Welcome To Screen2
           </Text>
