@@ -16,7 +16,7 @@ const ItemCard = ({name, opacity, dark}: Props) => {
   return (
     <SafeAreaView className="m-2">
       <TouchableOpacity
-        className={'p-2 border border-black w-20 h-30 bg-customcolor-500/40'}
+        className={`p-2  border border-${name}-500 w-20 h-30 bg-customcolor-500/40`}
         onPress={() =>
           navigation.navigate('Screen2', {
             name: name,
@@ -24,9 +24,26 @@ const ItemCard = ({name, opacity, dark}: Props) => {
             opacity: opacity,
           })
         }>
-        <Text className={`text-${name}-500`}>{name}</Text>
-        <Text>Opacity: {opacity}</Text>
-        {dark ? <Text>Dark Mode</Text> : null}
+        <Text
+          className={
+            name === 'customcolor' ? `text-${name}` : `text-${name}-500`
+          }>
+          {name}
+        </Text>
+        <Text
+          className={
+            name === 'customcolor' ? `text-${name}` : `text-${name}-500`
+          }>
+          Opacity: {opacity}
+        </Text>
+        {dark ? (
+          <Text
+            className={
+              name === 'customcolor' ? `text-${name}` : `text-${name}-500`
+            }>
+            Dark Mode
+          </Text>
+        ) : null}
       </TouchableOpacity>
     </SafeAreaView>
   );
