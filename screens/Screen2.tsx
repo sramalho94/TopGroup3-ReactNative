@@ -32,7 +32,16 @@ const Screen2 = ({route}: Props) => {
             {' '}
             Welcome To Screen2
           </Text>
-          <Text className={`text-${name}`}>Name: {name}</Text>
+          <Text
+            className={
+              name === 'rred' || name === 'bblue'
+                ? `text-${name}-500`
+                : name === 'customcolor'
+                ? `text-${name}`
+                : `text-${name}`
+            }>
+            Name: {name}
+          </Text>
           <Text className="text-bblue-500">Dark: {dark ? 'Yes' : 'No'}</Text>
           <Text className="text-rred-500">Opacity: {opacity}</Text>
           <TouchableOpacity onPress={() => navigation.goBack()}>
