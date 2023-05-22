@@ -14,7 +14,7 @@ type Props = {name: string; opacity: number; dark: boolean};
 const ItemCard = ({name, opacity, dark}: Props) => {
   const navigation = useNavigation<NavigationProp>();
   return (
-    <SafeAreaView>
+    <SafeAreaView className="m-2">
       <TouchableOpacity
         className={'p-2 border border-black w-20 h-30 bg-customcolor-500/40'}
         onPress={() =>
@@ -24,7 +24,7 @@ const ItemCard = ({name, opacity, dark}: Props) => {
             opacity: opacity,
           })
         }>
-        <Text className={`text-${name}`}>{name}</Text>
+        <Text className={`text-${name}-500`}>{name}</Text>
         <Text>Opacity: {opacity}</Text>
         {dark ? <Text>Dark Mode</Text> : null}
       </TouchableOpacity>
