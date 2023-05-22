@@ -1,8 +1,9 @@
-import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../App';
-import {useNavigation} from '@react-navigation/native';
+
+import ItemCard from '../components/ItemCard';
 
 export type NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -17,7 +18,6 @@ const themes = [
 ];
 
 const Home = () => {
-  const navigation = useNavigation<NavigationProp>();
   return (
     <SafeAreaView className="justify-center md:flex-col align-middle min-h-screen min-w-screen bg-yellow-400/40">
       <View className="justify-center align-middle">
@@ -31,22 +31,14 @@ const Home = () => {
             Select A Color Theme to Move on to the page
           </Text>
         </View>
-        <View className="flex-row space-x-1 max-w-screen mx-1">
+        <View className="flex-row  max-w-screen mx-1">
           {themes.map(theme => (
-            <TouchableOpacity
-              className={'p-2 border border-black w-1/4 bg-customcolor-500/40'}
+            <ItemCard
               key={theme.name}
-              onPress={() =>
-                navigation.navigate('Screen2', {
-                  name: theme.name,
-                  dark: theme.dark,
-                  opacity: theme.opacity,
-                })
-              }>
-              <Text className={`text-${theme.name}-500`}>{theme.name}</Text>
-              <Text>Opacity: {theme.opacity}</Text>
-              {theme.dark ? <Text>Dark Mode</Text> : null}
-            </TouchableOpacity>
+              name={theme.name}
+              dark={theme.dark}
+              opacity={theme.opacity}
+            />
           ))}
         </View>
       </View>
